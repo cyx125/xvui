@@ -64,7 +64,7 @@
     methods: {
       onClicked (e) {
         const { type, disabled } = this;
-        this.$emit('wxcButtonClicked', { e, type, disabled });
+        this.$emit('xButtonClicked', { e, type, disabled });
       }
     }
   };

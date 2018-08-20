@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <wxc-overlay v-if="show" :show="true" :hasAnimation="false"></wxc-overlay>
+    <x-overlay v-if="show" :show="true" :hasAnimation="false"></x-overlay>
     <div class="dialog-box" v-if="show" :style="{top:top+'px'}">
       <div class="dialog-content">
         <slot name="title">
@@ -112,11 +112,11 @@
 </style>
 
 <script>
-  import WxcOverlay from '../wxc-overlay'
+  import XOverlay from '../overlay'
   import { CHECKED, UN_CHECKED } from './type';
 
   export default {
-    components: { WxcOverlay },
+    components: { XOverlay },
     props: {
       show: {
         type: Boolean,
@@ -177,19 +177,19 @@
     },
     methods: {
       secondaryClicked () {
-        this.$emit('wxcDialogCancelBtnClicked', {
+        this.$emit('XDialogCancelBtnClicked', {
           type: 'cancel'
         });
       },
       primaryClicked (e) {
-        this.$emit('wxcDialogConfirmBtnClicked', {
+        this.$emit('XDialogConfirmBtnClicked', {
           type: 'confirm'
         });
       },
       noPromptClicked (e) {
         const isChecked = !this.isChecked;
         this.noPromptIcon = isChecked ? CHECKED : UN_CHECKED;
-        this.$emit('wxcDialogNoPromptClicked', { isChecked });
+        this.$emit('XDialogNoPromptClicked', { isChecked });
       }
     }
   };
