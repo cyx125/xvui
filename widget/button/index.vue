@@ -6,6 +6,9 @@
        :aria-label="text">
     <text class="btn-text" :style="mrTextStyle">{{text}}</text>
   </div>
+
+
+  <!-- 测试 -->
 </template>
 
 <script>
