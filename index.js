@@ -25,7 +25,7 @@ import XTag from './widget/tag/';
 
 import XTabBar from './widget/tabbar/';
 
-
+ 
 export {
     // widgets
     XButton,
