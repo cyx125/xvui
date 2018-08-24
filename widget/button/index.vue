@@ -50,7 +50,12 @@
         if (type === 'white') {
           disabledInStyle = { backgroundColor: 'rgba(0, 0, 0, 0.1)' };
         }
-
+        console.log(disabled ? {
+          ...mrBtnStyle,
+          ...disabledInStyle,
+          ...disabledStyle,
+          borderWidth: 0
+        } : mrBtnStyle)
         return disabled ? {
           ...mrBtnStyle,
           ...disabledInStyle,
@@ -75,14 +80,18 @@
 
 <style scoped>
   .wxc-btn {
+    box-sizing: border-box;
+    display: flex;
     width: 702px;
     height: 88px;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
+    border-color: #f00;
+    border-width: 2px;
+    border-style: solid;
     opacity: 1;
   }
-
   .btn-text {
     text-overflow: ellipsis;
     lines: 1;

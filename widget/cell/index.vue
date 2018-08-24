@@ -2,7 +2,7 @@
   <div :class="['wxc-cell', hasTopBorder && 'cell-top-border', hasBottomBorder && 'cell-bottom-border', hasMargin && 'cell-margin', hasVerticalIndent && 'cell-indent', desc && 'has-desc']"
     :style="cellStyle"
     :accessible="autoAccessible"
-    :aria-label="`${label},${title},${desc}`"
+    :aria-label="label+','+title+','+desc"
     @click="cellClicked">
     <slot name="label">
       <div v-if="label">
@@ -23,13 +23,13 @@
            class="cell-arrow-icon"
            :aria-hidden="true"
            v-if="hasArrow"></image>
-
   </div>
 </template>
 
 <style scoped>
   .wxc-cell {
     /*height: 100px;*/
+    display: flex;
     flex-direction: row;
     align-items: center;
     padding-left: 24px;
@@ -58,11 +58,13 @@
   .cell-top-border {
     border-top-color: #e2e2e2;
     border-top-width: 1px;
+    border-top-style: solid;
   }
 
   .cell-bottom-border {
     border-bottom-color: #e2e2e2;
-    border-bottom-width: 1px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
   }
 
   .cell-label-text {

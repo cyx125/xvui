@@ -4,16 +4,15 @@ import XCell from './widget/cell/';
 // import XCheckbox from './widget/checkbox/';
 // import XCheckboxlist from './widget/checkboxlist/';
 // import XCity from './widget/city/';
-import XDialog from './widget/dialog/';
+// import XDialog from './widget/dialog/';
 // import XIcon from './widget/icon/';
 // import XLightbox from './widget/lightbox/';
 // import XLoading from './widget/buttloadingon/';
 // import XMask from './widget/mask/';
 // import XMinibar from './widget/minibar/';
 // import XNoticebar from './widget/noticebar/';
-import XOverlay from './widget/overlay/';
+// import XOverlay from './widget/overlay/';
 // import XProgress from './widget/progress/';
- 
 
 // import XRadio from './widget/radio/';
 // import XRefresher from './widget/refresher/';
@@ -21,38 +20,35 @@ import XOverlay from './widget/overlay/';
 // import XSelect from './widget/select/';
 // import XSlider from './widget/slider/';
 // import XSteper from './widget/steper/';
-import XTag from './widget/tag/';
+// import XTag from './widget/tag/';
 
-import XTabBar from './widget/tabbar/';
+import test from './widget/test/';
 
- 
 export {
-    // widgets
-    XButton,
-    // XCalendar,
-    XCell,
-    // XCheckbox,
-    // XCheckboxlist,
-    // XCity,
-    // XCountdown,
-    XDialog,
-    // XIcon,
-    // XLightbox,
-    // XLoading,
-    // XMask,
-    // XMinibar,
-    // XNoticebar,
-    XOverlay,
-    // XProgress,
+  XButton,
+  // XCalendar,
+  XCell,
+  // XCheckbox,
+  // XCheckboxlist,
+  // XCity,
 
-    // XRadio,
-    // XRefresher,
-    // XSearchbar,
-    // XSelect,
-    // XSlider,
-    // XSteper,
-    XTag,
+  // XDialog,
+  // XIcon,
+  // XLightbox,
+  // XLoading,
+  // XMask,
+  // XMinibar,
+  // XNoticebar,
+  // XOverlay,
+  // XProgress,
 
-    XTabBar
-    
+  // XRadio,
+  // XRefresher,
+  // XSearchbar,
+  // XSelect,
+  // XSlider,
+  // XSteper,
+  // XTag,
+
+  test
 };
