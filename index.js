@@ -4,7 +4,7 @@ import XCell from './widget/cell/';
 // import XCheckbox from './widget/checkbox/';
 // import XCheckboxlist from './widget/checkboxlist/';
 // import XCity from './widget/city/';
-// import XDialog from './widget/dialog/';
+import XDialog from './widget/dialog/';
 // import XIcon from './widget/icon/';
 // import XLightbox from './widget/lightbox/';
 // import XLoading from './widget/buttloadingon/';
@@ -20,7 +20,7 @@ import XCell from './widget/cell/';
 // import XSelect from './widget/select/';
 // import XSlider from './widget/slider/';
 // import XSteper from './widget/steper/';
-// import XTag from './widget/tag/';
+import XTag from './widget/tag/';
 
 import test from './widget/test/';
 
@@ -32,7 +32,7 @@ export {
   // XCheckboxlist,
   // XCity,
 
-  // XDialog,
+  XDialog,
   // XIcon,
   // XLightbox,
   // XLoading,
@@ -48,7 +48,7 @@ export {
   // XSelect,
   // XSlider,
   // XSteper,
-  // XTag,
+  XTag,
 
   test
 };

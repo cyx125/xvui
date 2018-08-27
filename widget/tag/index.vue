@@ -2,7 +2,7 @@
   <div>
     <div v-if="showSolid || showHollow"
          :class="['tag-item','tag-border',showHollow && 'tag-hollow']"
-         :style="tagTextStyle">
+         :style="showSolid ? { backgroundColor: tagColor } : { borderColor: tagColor }">
       <text class="tag-text" :style="{color:fontColor}">{{value}}</text>
     </div>
     <image v-if="showImage"
@@ -27,6 +27,7 @@
 <style scoped>
   .tag-item {
     height: 24px;
+    display: flex;
     justify-content: center;
     align-items: center;
     /* hack高度不居中问题，后续版本升级去掉 */
@@ -41,15 +42,19 @@
   }
 
   .tag-hollow {
+    border-style: solid;
     border-width: 1px;
   }
 
   .tag-image {
+    display: flex;
     height: 24px;
   }
 
   .tag-special {
+    display: flex;
     border-width: 1px;
+    border-style: solid;
     flex-direction: row;
   }
 
@@ -59,6 +64,7 @@
   }
 
   .tag-left {
+    display: flex;
     width: 24px;
     height: 24px;
     align-items: center;
@@ -83,7 +89,7 @@
       },
       value: {
         type: [String, Number],
-        default: '测试测试'
+        default: 'tag'
       },
       tagColor: {
         type: String,

@@ -1,19 +1,15 @@
 <template>
-  <div class="wxc-btn"
-       :style="mrBtnStyle"
-       @click="onClicked"
-       :accessible="true"
-       :aria-label="text">
-    <text class="btn-text" :style="mrTextStyle">{{text}}</text>
+  <div :class="['wxc-btn','wxc-btn-'+type,'wxc-btn-'+size,disabled?'wxc-btn-disabled':'']"
+      @click="onClicked"
+      :accessible="true"
+      :aria-label="text"
+      >
+      <text :class="['btn-text','btn-text-'+type,'btn-text-'+size]">{{text}}</text>
   </div>
-
-
   <!-- 测试 -->
 </template>
 
 <script>
-  import { STYLE_MAP, TEXT_STYLE_MAP, BUTTON_STYLE_MAP, TEXT_FONTSIZE_STYLE_MAP } from './type';
-
   export default {
     props: {
       text: {
@@ -32,41 +28,22 @@
         type: Boolean,
         default: false
       },
-      btnStyle: Object,
-      textStyle: Object,
       disabledStyle: Object
     },
-    computed: {
-      mrBtnStyle () {
-        const { type, disabled, btnStyle, size, disabledStyle } = this;
-
-        const mrBtnStyle = {
-          ...STYLE_MAP[type],
-          ...btnStyle,
-          ...BUTTON_STYLE_MAP[size]
-        };
-
-        let disabledInStyle = { opacity: 0.2 };
-        if (type === 'white') {
-          disabledInStyle = { backgroundColor: 'rgba(0, 0, 0, 0.1)' };
+    data () {
+      return {
+        btnStyle: {
+          backgroundColor: '#FFFFFF',
+          borderColor: '#A5A5A5',
+          borderWidth: '1px',
+          opacity: '1',
+          height: '88px',
+          width: '702px'
+        },
+        textStyle: {
+          color: '#FFFFFF',
+          fontSize: '28px'
         }
-        console.log(disabled ? {
-          ...mrBtnStyle,
-          ...disabledInStyle,
-          ...disabledStyle,
-          borderWidth: 0
-        } : mrBtnStyle)
-        return disabled ? {
-          ...mrBtnStyle,
-          ...disabledInStyle,
-          ...disabledStyle,
-          borderWidth: 0
-        } : mrBtnStyle;
-      },
-      mrTextStyle () {
-        const { type, disabled, textStyle, size } = this;
-        const mrTextStyle = { ...TEXT_STYLE_MAP[type], ...textStyle, ...TEXT_FONTSIZE_STYLE_MAP[size] };
-        return disabled ? { ...mrTextStyle, color: '#FFFFFF' } : mrTextStyle;
       }
     },
     methods: {
@@ -87,15 +64,84 @@
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    border-color: #f00;
-    border-width: 2px;
-    border-style: solid;
     opacity: 1;
   }
   .btn-text {
     text-overflow: ellipsis;
     lines: 1;
     font-size: 36px;
-    color: #ffffff;
+    color: #3D3D3D;
+  }
+  .wxc-btn-disabled {
+    opacity: 0.2
+  }
+  
+
+  .wxc-btn-red {
+    background-color: #FF5000
+  }
+  .wxc-btn-yellow {
+    background-color: #FFC900
+  }
+  .wxc-btn-white {
+    background-color: #FFFFFF;
+    border-color: #A5A5A5;
+    border-width: 1px;
+    border-style: solid;
+  }
+  .wxc-btn-blue {
+    background-color: #0F8DE8
+  }
+  .wxc-btn-green {
+    background-color: #19be6b
+  }
+  /* .wxc-btn-white.disabled {
+    background-color: rgba(0, 0, 0, 0.1);
+  } */
+ 
+  .btn-text-red {
+    color: #FFFFFF
+  }
+  .btn-text-yellow {
+    color: #FFFFFF
+  }
+  .btn-text-white {
+    color: #3D3D3D
+  }
+  .btn-text-blue {
+    color: #FFFFFF
+  }
+  .btn-text-green {
+    color: #FFFFFF
+  }
+
+  .wxc-btn-full {
+    width: 702px;
+    height: 88px;
+  }
+  .wxc-btn-big {
+    width: 339px;
+    height: 70px;
+  }
+  .wxc-btn-medium {
+    width: 218px;
+    height: 60px;
+  }
+  .wxc-btn-small {
+    width: 157px;
+    height: 44px;
+  }
+  
+  .btn-text-full{
+    font-size: 36px
+  }
+  .btn-text-big{
+    font-size: 32px
+  }
+  .btn-text-medium{
+    font-size: 28px
+  }
+  .btn-text-small{
+    font-size: 24px
   }
 </style>

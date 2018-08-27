@@ -112,11 +112,12 @@ const getBaseConfig = () => ({
       },
       {
         test: /\.vue(\?[^?]+)?$/,
-        use: []
+        use: [
+        ]
       },
       {
         test: /\.css$/,
-        use: 'happypack/loader?id=css'
+        use: ['happypack/loader?id=css']
       }
     ]
   },
