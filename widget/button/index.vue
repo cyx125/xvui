@@ -35,7 +35,7 @@
         btnStyle: {
           backgroundColor: '#FFFFFF',
           borderColor: '#A5A5A5',
-          borderWidth: '1px',
+          borderWidth: '2px',
           opacity: '1',
           height: '88px',
           width: '702px'
@@ -86,7 +86,7 @@
   .wxc-btn-white {
     background-color: #FFFFFF;
     border-color: #A5A5A5;
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
   }
   .wxc-btn-blue {

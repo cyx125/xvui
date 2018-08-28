@@ -37,13 +37,13 @@
 
 <script>
   import * as Format from './format';
-  import XUtil from '@xvue/xutil';
+import XUtil from '@xvue/xutil';
 
-  const isWeb = XUtil.env.isWeb();
+import WxcMinibar from '../wxc-minibar'
 
-  const dom = weex.requireModule('dom');
+const isWeb = XUtil.env.isWeb();
 
-  import WxcMinibar from '../wxc-minibar'
+const dom = weex.requireModule('dom');
 
   export default {
     components: { WxcMinibar },
@@ -195,10 +195,10 @@
       },
       _animate (status, callback = null) {
         var ref = this.$refs.pageCalendar
-        if(this.animationType==='push') {
-          XUtil.animation.pageTransitionAnimation(ref,`translateX(${status ? -750 : 750}px)`,status,callback)
-        } else if (this.animationType==='model') {
-          XUtil.animation.pageTransitionAnimation(ref,`translateY(${status ? -XUtil.env.getScreenHeight() : XUtil.env.getScreenHeight()}px)`,status,callback)
+        if (this.animationType === 'push') {
+          XUtil.animation.pageTransitionAnimation(ref, `translateX(${status ? -750 : 750}px)`, status, callback)
+        } else if (this.animationType === 'model') {
+          XUtil.animation.pageTransitionAnimation(ref, `translateY(${status ? -XUtil.env.getScreenHeight() : XUtil.env.getScreenHeight()}px)`, status, callback)
         }
       },
       show () {
@@ -234,8 +234,8 @@
   .calendar-weekday {
     height: 60px;
     background-color: #ffffff;
-    border-bottom-width: 1px;
-    border-top-width: 1px;
+    border-bottom-width: 2px;
+    border-top-width: 2px;
     border-color: #e2e2e2;
     flex-direction: row;
     justify-content: space-around;
@@ -267,7 +267,7 @@
     height: 140px;
     flex-direction: row;
     background-color: #ffffff;
-    border-bottom-width: 1px;
+    border-bottom-width: 2px;
     border-color: #f2f3f4;
     align-items: center;
     justify-content: space-between;

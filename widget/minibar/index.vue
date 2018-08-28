@@ -56,7 +56,7 @@
   }
 
   .left-button {
-    width: 21px;
+    width: 22px;
     height: 36px;
   }
 

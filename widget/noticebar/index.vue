@@ -26,8 +26,8 @@
     padding-bottom: 10px;
     padding-left: 24px;
     background-color: #FFF7D6;
-    border-bottom-width: 1px;
-    border-top-width: 1px;
+    border-bottom-width: 2px;
+    border-top-width: 2px;
     border-color: #FFEEAE;
     border-style: solid;
     flex-direction: row;

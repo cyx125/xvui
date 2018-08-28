@@ -1,20 +1,20 @@
 import XButton from './widget/button/';
 // import XCalendar from './widget/calendar/';
 import XCell from './widget/cell/';
-// import XCheckbox from './widget/checkbox/';
+import XCheckbox from './widget/checkbox/';
 // import XCheckboxlist from './widget/checkboxlist/';
 // import XCity from './widget/city/';
 import XDialog from './widget/dialog/';
 // import XIcon from './widget/icon/';
 // import XLightbox from './widget/lightbox/';
-// import XLoading from './widget/buttloadingon/';
+import XLoading from './widget/loading/';
 // import XMask from './widget/mask/';
 // import XMinibar from './widget/minibar/';
 // import XNoticebar from './widget/noticebar/';
 // import XOverlay from './widget/overlay/';
 // import XProgress from './widget/progress/';
 
-// import XRadio from './widget/radio/';
+import XRadio from './widget/radio/';
 // import XRefresher from './widget/refresher/';
 // import XSearchbar from './widget/searchbar/';
 // import XSelect from './widget/select/';
@@ -28,21 +28,21 @@ export {
   XButton,
   // XCalendar,
   XCell,
-  // XCheckbox,
+  XCheckbox,
   // XCheckboxlist,
   // XCity,
 
   XDialog,
   // XIcon,
   // XLightbox,
-  // XLoading,
+  XLoading,
   // XMask,
   // XMinibar,
   // XNoticebar,
   // XOverlay,
   // XProgress,
 
-  // XRadio,
+  XRadio,
   // XRefresher,
   // XSearchbar,
   // XSelect,

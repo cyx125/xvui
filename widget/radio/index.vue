@@ -50,7 +50,7 @@
       this.setListChecked(this.list);
     },
     methods: {
-      setListChecked(list){
+      setListChecked (list) {
         if (list && list.length > 0) {
           list.forEach((item, i) => {
             item.checked && (this.checkedIndex = i);

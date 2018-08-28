@@ -43,7 +43,7 @@
 
   .tag-hollow {
     border-style: solid;
-    border-width: 1px;
+    border-width: 2px;
   }
 
   .tag-image {
@@ -53,7 +53,7 @@
 
   .tag-special {
     display: flex;
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
     flex-direction: row;
   }
@@ -73,8 +73,8 @@
 
   .tag-text {
     font-size: 20px;
-    height: 22px;
-    line-height: 22px;
+    height: 24px;
+    line-height: 24px;
     padding-left: 6px;
     padding-right: 6px;
   }

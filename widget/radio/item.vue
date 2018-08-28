@@ -1,7 +1,7 @@
 <template>
-  <wxc-cell :has-top-border="hasTopBorder"
+  <XCell :has-top-border="hasTopBorder"
             :cell-style="{backgroundColor:backgroundColor}"
-            @wxcCellClicked="wxcCellClicked"
+            @xCellClicked="xCellClicked"
             :accessible="true"
             :aria-label="`${title},状态为${checked?'已选中':'未选中'},${disabled?'不可更改':''}`">
     <text :style="{color:color}"
@@ -10,8 +10,8 @@
     <image :src="radioIcon"
            v-if="radioIcon"
            slot="value"
-           class="radio">
-  </wxc-cell>
+           class="radio"/>
+  </XCell>
 </template>
 
 <style scoped>
@@ -26,11 +26,11 @@
 </style>
 
 <script>
-  import WxcCell from '../wxc-cell';
+  import XCell from '../cell/index.vue';
   import { CHECKED, DISABLED } from './type.js'
 
   export default {
-    components: { WxcCell },
+    components: { XCell },
     props: {
       hasTopBorder: {
         type: Boolean,
@@ -80,7 +80,7 @@
       }
     },
     methods: {
-      wxcCellClicked () {
+      xCellClicked () {
         const { disabled, value } = this;
         if (!disabled) {
           this.$emit('wxcRadioItemChecked', { value, disabled })

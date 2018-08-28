@@ -1,7 +1,7 @@
 <template>
   <wxc-cell :has-top-border="hasTopBorder"
             :has-bottom-border="hasBottomBorder"
-            @wxcCellClicked="wxcCellClicked"
+            @xCellClicked="xCellClicked"
             :accessible="true"
             :aria-label="`${title},状态为${checked ? '已选中' : '未选中'},${disabled ? '不可更改' : '点击可切换'}`">
     <text :style="{color:textColor}"
@@ -25,7 +25,7 @@
 </style>
 
 <script>
-  import WxcCell from '../wxc-cell';
+  import WxcCell from '../cell/index.vue';
   import { CHECKED, UNCHECKED, CHECKED_DISABLED, UNCHECKED_DISABLED } from './type'
 
   export default {
@@ -95,7 +95,7 @@
       this.innerChecked = checked;
     },
     methods: {
-      wxcCellClicked () {
+      xCellClicked () {
         const { disabled, innerChecked, value } = this;
         if (!disabled) {
           this.innerChecked = !innerChecked;

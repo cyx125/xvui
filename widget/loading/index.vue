@@ -2,14 +2,13 @@
   <div :class="[showLoading && needMask && 'loading-need-mask']"
        @click="maskClicked"
        :style="maskStyle">
-    <div class="wxc-loading" :style="{ top: topPosition +'px'}" v-if="showLoading">
+    <div class="wxc-loading"  v-if="showLoading">
       <div :class="['loading-box',loading.class]" :aria-hidden="true">
         <image :src="loading.url"
                class="loading-trip-image"
                resize="contain"
                quality="original"></image>
-        <text v-if="loadingText"
-              class="loading-text">{{loadingText}}</text>
+        <text v-if="loadingText" class="loading-text">{{loadingText}}</text>
       </div>
     </div>
   </div>
@@ -34,6 +33,7 @@
   }
 
   .loading-box {
+    display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
@@ -65,7 +65,7 @@
 
 <script>
   import { GIF, BLACK_GIF } from './type';
-  import XUtil from '@xvue/xutil';
+  // import XUtil from '@xvue/xutil';
 
   export default {
     props: {
@@ -120,10 +120,10 @@
             }
         }
         return loading;
-      },
-      topPosition () {
-        return (XUtil.env.getPageHeight() - 200) / 2;
       }
+      // topPosition () {
+      //   return (XUtil.env.getPageHeight() - 200) / 2;
+      // }
     },
     created () {
       this.setShow();

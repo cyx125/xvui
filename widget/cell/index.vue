@@ -57,7 +57,7 @@
 
   .cell-top-border {
     border-top-color: #e2e2e2;
-    border-top-width: 1px;
+    border-top-width: 2px;
     border-top-style: solid;
   }
 
@@ -160,7 +160,7 @@
     methods: {
       cellClicked (e) {
         const link = this.link;
-        this.$emit('wxcCellClicked', { e });
+        this.$emit('xCellClicked', { e });
         link && XUtil.goToH5Page(link, true);
       }
     }

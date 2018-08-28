@@ -1,15 +1,15 @@
 <template>
   <div>
     <wxc-checkbox v-for="(item,i) in list"
-                  v-bind="item"
-                  :config="config"
-                  @wxcCheckBoxItemChecked="wxcCheckBoxItemChecked"
-                  :key="i"></wxc-checkbox>
+      v-bind="item"
+      :config="config"
+      @wxcCheckBoxItemChecked="wxcCheckBoxItemChecked"
+      :key="i"></wxc-checkbox>
   </div>
 </template>
 
 <script>
-  import WxcCheckbox from '../wxc-checkbox/index.vue';
+  import WxcCheckbox from '../checkbox/index.vue';
 
   export default {
     components: { WxcCheckbox },

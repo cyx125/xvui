@@ -146,7 +146,7 @@
     left: 24px;
     top: 22px;
     border-right-style: solid;
-    border-right-width: 1px;
+    border-right-width: 2px;
     border-right-color: #C7C7C7;
   }
 
