@@ -1,16 +1,16 @@
 <template>
-  <wxc-cell :has-top-border="hasTopBorder"
-            :has-bottom-border="hasBottomBorder"
-            @xCellClicked="xCellClicked"
-            :accessible="true"
-            :aria-label="`${title},状态为${checked ? '已选中' : '未选中'},${disabled ? '不可更改' : '点击可切换'}`">
+ <div :class="['x-cell', hasTopBorder && 'cell-top-border', hasBottomBorder && 'cell-bottom-border','cell-indent']"
+    :accessible="true"
+      :aria-label="title + ',状态为' + checked?'已选中':'未选中' + ',' +disabled?'不可更改':'' + '}' "
+    @click="xCellClicked">
+    <div class="cell-title">
     <text :style="{color:textColor}"
           class="title-text"
           slot="title">{{title}}</text>
+    </div>
     <image :src="checkIcon"
-           slot="value"
            class="checkbox"></image>
-  </wxc-cell>
+  </div>
 </template>
 
 <style scoped>
@@ -22,14 +22,48 @@
   .title-text {
     font-size: 30px;
   }
+
+  .x-cell {
+    /*height: 100px;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: #ffffff;
+  }
+
+  .cell-margin {
+    margin-bottom: 24px;
+  }
+
+  .cell-title {
+    flex: 1;
+  }
+
+  .cell-indent {
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+
+  .cell-top-border {
+    border-top-color: #e2e2e2;
+    border-top-width: 2px;
+    border-top-style: solid;
+  }
+
+  .cell-bottom-border {
+    border-bottom-color: #e2e2e2;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+  }
+
 </style>
 
 <script>
-  import WxcCell from '../cell/index.vue';
   import { CHECKED, UNCHECKED, CHECKED_DISABLED, UNCHECKED_DISABLED } from './type'
 
   export default {
-    components: { WxcCell },
     props: {
       hasTopBorder: {
         type: Boolean,
@@ -99,7 +133,7 @@
         const { disabled, innerChecked, value } = this;
         if (!disabled) {
           this.innerChecked = !innerChecked;
-          this.$emit('wxcCheckBoxItemChecked', { value, checked: this.innerChecked })
+          this.$emit('xCheckBoxItemChecked', { value, checked: this.innerChecked })
         }
       }
     }

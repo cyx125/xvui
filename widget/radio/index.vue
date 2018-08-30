@@ -1,10 +1,10 @@
 <template>
   <div>
-    <wxc-radio v-for="(item,i) in updateList"
+    <xRadio v-for="(item,i) in updateList"
                :config="config"
                v-bind="item"
-               @wxcRadioItemChecked="wxcRadioItemChecked(i,$event)"
-               :key="i"></wxc-radio>
+               @xRadioItemChecked="xRadioListChecked(i,$event)"
+               :key="i"></xRadio>
   </div>
 </template>
 
@@ -13,10 +13,10 @@
 </style>
 
 <script>
-  import wxcRadio from './item.vue';
+  import xRadio from './item.vue';
 
   export default {
-    components: { wxcRadio },
+    components: { xRadio },
     props: {
       list: {
         type: Array,
@@ -57,11 +57,11 @@
           });
         }
       },
-      wxcRadioItemChecked (i, e) {
+      xRadioListChecked (i, e) {
         const oldIndex = this.checkedIndex;
         const { value, title } = this.list[i];
         this.checkedIndex = i;
-        this.$emit('wxcRadioListChecked', { value, title, oldIndex, index: i })
+        this.$emit('xRadioListChecked', { value, title, oldIndex, index: i })
       }
     }
   }

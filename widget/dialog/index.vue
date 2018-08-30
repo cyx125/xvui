@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <x-overlay v-if="show" :show="true" @wxcOverlayBodyClicked="wxcOverlayBodyClicked"></x-overlay>
+    <x-overlay v-if="show" :show="true" @xOverlayBodyClicked="overlayBodyClicked"></x-overlay>
     <div class="dialog-out-box"  v-if="show">
       <div class="dialog-box">
         <div class="dialog-content">

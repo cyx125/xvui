@@ -1,28 +1,65 @@
 <template>
-  <XCell :has-top-border="hasTopBorder"
-            :cell-style="{backgroundColor:backgroundColor}"
-            @xCellClicked="xCellClicked"
-            :accessible="true"
-            :aria-label="`${title},状态为${checked?'已选中':'未选中'},${disabled?'不可更改':''}`">
-    <text :style="{color:color}"
-          class="title-text"
-          slot="title">{{title}}</text>
-    <image :src="radioIcon"
-           v-if="radioIcon"
-           slot="value"
-           class="radio"/>
-  </XCell>
+  <div :class="['x-cell', hasTopBorder && 'cell-top-border','cell-bottom-border', 'cell-indent']"
+      :style="{backgroundColor:backgroundColor}"
+      :accessible="true"
+      :aria-label="title + ',状态为' + checked?'已选中':'未选中' + ',' +disabled?'不可更改':'' + '}' "
+      @click="xCellClicked">
+      <div class="cell-title">
+        <text :style="{color:color}" class="title-text">{{title}}</text>
+      </div>
+      <image 
+            :src="radioIcon"
+            v-if="radioIcon"
+            class="radio"/>  
+  </div>
 </template>
 
 <style scoped>
   .radio {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
   }
 
   .title-text {
     font-size: 30px;
+    line-height:42px;
   }
+
+   .x-cell {
+    /*height: 100px;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: #ffffff;
+  }
+
+  .cell-margin {
+    margin-bottom: 24px;
+  }
+
+  .cell-title {
+    flex: 1;
+  }
+
+  .cell-indent {
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+
+  .cell-top-border {
+    border-top-color: #e2e2e2;
+    border-top-width: 2px;
+    border-top-style: solid;
+  }
+
+  .cell-bottom-border {
+    border-bottom-color: #e2e2e2;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+  }
+
 </style>
 
 <script>
@@ -60,6 +97,9 @@
     data: () => ({
       icon: [CHECKED, DISABLED]
     }),
+    created () {
+      console.log('in item ', this.title, this.value)
+    },
     computed: {
       radioIcon () {
         const { icon, disabled, checked, config } = this;
@@ -80,10 +120,15 @@
       }
     },
     methods: {
+      cellClicked (e) {
+        // const link = this.link;
+        this.$emit('xCellClicked', { e });
+        // link && XUtil.goToH5Page(link, true);
+      },
       xCellClicked () {
         const { disabled, value } = this;
         if (!disabled) {
-          this.$emit('wxcRadioItemChecked', { value, disabled })
+          this.$emit('xRadioItemChecked', { value, disabled })
         }
       }
     }

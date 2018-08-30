@@ -1,18 +1,18 @@
 <template>
   <div>
-    <wxc-checkbox v-for="(item,i) in list"
+    <x-checkbox v-for="(item,i) in list"
       v-bind="item"
       :config="config"
-      @wxcCheckBoxItemChecked="wxcCheckBoxItemChecked"
-      :key="i"></wxc-checkbox>
+      @xCheckBoxItemChecked="xCheckBoxItemChecked"
+      :key="i"></x-checkbox>
   </div>
 </template>
 
 <script>
-  import WxcCheckbox from '../checkbox/index.vue';
+  import XCheckbox from '../checkbox/index.vue';
 
   export default {
-    components: { WxcCheckbox },
+    components: { XCheckbox },
     props: {
       list: {
         type: Array,
@@ -35,14 +35,14 @@
       }
     },
     methods: {
-      wxcCheckBoxItemChecked (e) {
+      xCheckBoxItemChecked (e) {
         if (e.checked) {
           this.checkedList.push(e.value);
         } else {
           const index = this.checkedList.indexOf(e.value);
           this.checkedList.splice(index, 1);
         }
-        this.$emit('wxcCheckBoxListChecked', { checkedList: this.checkedList })
+        this.$emit('xCheckBoxListChecked', { checkedList: this.checkedList })
       }
     }
   }
