@@ -250,7 +250,7 @@ const expressionBinding = weex.requireModule('expressionBinding');
         this._animateTransformX(page);
         this.isMoving = false;
         this.currentPage = page;
-        this.$emit('wxcTabPageCurrentTabSelected', { page });
+        this.$emit('xTabPageCurrentTabSelected', { page });
       },
       _animateTransformX (page) {
         const { duration, timingFunction } = this;

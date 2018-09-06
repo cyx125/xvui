@@ -1,10 +1,9 @@
 <!-- CopyRight (C) 2017-2022 Alibaba Group Holding Limited. -->
 <!-- Created by Tw93 on 17/07/28. -->
 <!-- Updated by Tw93 on 17/11/16.-->
-
 <template>
   <div class="wxc-tab-page"
-       :style="{ height: (tabPageHeight)+'px', backgroundColor:wrapBgColor }">
+       :style="{ height: tabPageHeight+'px', backgroundColor:wrapBgColor }">
     <scroller class="tab-title-list"
               ref="tab-title-list"
               :show-scrollbar="false"
@@ -90,6 +89,7 @@
 </style>
 
 <script>
+
 import Utils from '../../../xutil';
 import BindEnv from '../../../xenv';
 import Binding from 'weex-bindingx/lib/index.weex.js';
