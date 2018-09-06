@@ -23,7 +23,7 @@ import XRadio from './widget/radio/';
 // import XSteper from './widget/steper/';
 import XTag from './widget/tag/';
 import XPanItem from './widget/panitem/';
-import XTabPage from './widget/tabpage/';
+// import XTabPage from './widget/tabpage/';
 
 import test from './widget/test/';
 
@@ -53,7 +53,7 @@ export {
   // XSteper,
   XTag,
   XPanItem,
-  XTabPage,
+  // XTabPage,
 
   test
 };
