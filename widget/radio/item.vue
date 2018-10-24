@@ -98,7 +98,6 @@
       icon: [CHECKED, DISABLED]
     }),
     created () {
-      console.log('in item ', this.title, this.value)
     },
     computed: {
       radioIcon () {
