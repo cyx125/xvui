@@ -58,7 +58,7 @@
         if (this.isPanning) {
           return;
         }
-        this.url && Utils.goToH5Page(this.url, true);
+        this.url && Utils.goWeexUrl(this.url, true);
         this.$emit('wxcPanItemClicked', { extId: this.extId });
       },
 

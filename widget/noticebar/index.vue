@@ -143,7 +143,7 @@
         const { mode, noticeUrl, spm } = this;
         if (mode === 'link' && noticeUrl) {
           const { ttid } = weex.config.env;
-          XUtil.goToH5Page(noticeUrl, spm, ttid, true);
+          XUtil.goWeexUrl(noticeUrl, spm, ttid, true);
           this.$emit('wxcNoticebarLinkClicked', { url: noticeUrl });
         }
       },

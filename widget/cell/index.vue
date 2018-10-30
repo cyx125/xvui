@@ -161,7 +161,7 @@
       cellClicked (e) {
         const link = this.link;
         this.$emit('xCellClicked', { e });
-        link && XUtil.goToH5Page(link, true);
+        link && XUtil.goWeexUrl(link, true);
       }
     }
   };

@@ -293,7 +293,7 @@ export default {
       this.$emit('wxcTabPageCurrentTabSelected', { page });
     },
     jumpOut (url) {
-      url && Utils.goToH5Page(url)
+      url && Utils.goWeexUrl(url)
     },
     _animateTransformX (page, animated) {
       const { duration, timingFunction } = this;
