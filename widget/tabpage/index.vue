@@ -90,8 +90,8 @@
 
 <script>
 
-import Utils from '../../../xutil';
-import BindEnv from '../../../xenv';
+import Utils from '$xutil';
+import BindEnv from '$xenv';
 import Binding from 'weex-bindingx/lib/index.weex.js';
 
 const dom = weex.requireModule('dom');

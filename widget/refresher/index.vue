@@ -23,12 +23,12 @@
   </refresh>
 </template>
 <script>
-  const animation = weex.requireModule('animation');
-
   // 减少打包体积
-  import bindingx from 'weex-bindingx/lib/index.weex';
-  import BindEnv  from '@xvue/xutil/bind-env';
-  import XUtil from '@xvue/xutil';
+import bindingx from 'weex-bindingx/lib/index.weex';
+import BindEnv from '@xvue/xutil/bind-env';
+import XUtil from '@xvue/xutil';
+
+const animation = weex.requireModule('animation');
 
   const ICON_ARROW_DOWN = 'https://img.alicdn.com/tfs/TB1A8faeTtYBeNjy1XdXXXXyVXa-48-48.png';
 
@@ -104,8 +104,8 @@
        * 下拉事件
        */
       onPullingDown (event) {
-        this.$emit('wxcPullingDown',event);
-        let pd = event.pullingDistance * (XUtil.env.isIOS() ? -1 : 1);
+        this.$emit('wxcPullingDown', event);
+        const pd = event.pullingDistance * (XUtil.env.isIOS() ? -1 : 1);
         pd > (XUtil.env.isAndroid() ? 200 : 140) ? (this.couldUnLash = true) : (this.couldUnLash = false);
         if (this.refreshing && pd < 20) {
           this.timeoutSto && clearTimeout(this.timeoutSto);
@@ -147,7 +147,7 @@
        */
       cycleGoRound () {
         if (XUtil.env.isAndroid()) return;
-        let cycle = this.$refs['cycle'].ref;
+        const cycle = this.$refs['cycle'].ref;
         this.arrowShow(false);
         if (!cycle) {
           return;
@@ -173,7 +173,7 @@
         arrow && animation.transition(arrow, {
           styles: {
             opacity: _show ? 1 : 0,
-            transform: _show ? "scale(1)" : "scale(0.5)"
+            transform: _show ? 'scale(1)' : 'scale(0.5)'
           },
           duration: 300,
           delay: 0
