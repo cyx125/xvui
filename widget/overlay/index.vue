@@ -5,7 +5,7 @@
          v-if="show"
          :hack="shouldShow"
          @click="overlayClicked"
-         :style="{opacity: ( hasAnimation && hasWeed )  ? 0 : 1,backgroundColor: 'rgba(0, 0, 0,'+opacity+')'}">
+         :style="{opacity: ( hasAnimation && hasWeed )  ? 0 : 1,backgroundColor: bgColor}">
     </div>
   </div>
 </template>
@@ -48,9 +48,9 @@ export default {
       type: Array,
       default: () => (['ease-in', 'ease-out'])
     },
-    opacity: {
-      type: [Number, String],
-      default: 0.6
+    bgColor: {
+      type: [String],
+      default: 'rgba(0,0,0,0.6)'
     },
     canAutoClose: {
       type: Boolean,
@@ -62,12 +62,6 @@ export default {
     }
   },
   computed: {
-    overlayStyle () {
-      return {
-
-        backgroundColor: `rgba(0, 0, 0,${this.opacity})`
-      }
-    },
     shouldShow () {
       const { show, hasAnimation } = this;
       hasAnimation && setTimeout(() => {

@@ -5,6 +5,7 @@
                    v-if="show"
                    ref="overlay"
                    v-bind="overlayCfg"
+                   :bgColor="overlayColor"
                    @xOverlayBodyClicking="xOverlayBodyClicking"></x-overlay>
     </div>
     <div ref="wxc-popup"
@@ -62,6 +63,10 @@ const animation = weex.requireModule('animation');
       pos: {
         type: String,
         default: 'bottom'
+      },
+      overlayColor: {
+        type: String,
+        default: 'rgba(0, 0, 0,0.6)'
       },
       popupColor: {
         type: String,
